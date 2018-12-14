@@ -17,8 +17,6 @@ import javax.tools.JavaFileObject;
 import javax.tools.StandardJavaFileManager;
 import javax.tools.ToolProvider;
 
-import com.newegg.ec2.platform.gatewaytoes.logmessagehandle.AbstractLogMessageHandler;
-
 /**
  * @author Hulva Luva.H
  * @date 2018年12月13日
@@ -92,12 +90,12 @@ public class DynamicCodeHandler {
           // Create a new instance...
           Object obj = loadedClass.newInstance();
           // Santity check
-          if (obj instanceof AbstractLogMessageHandler) {
-            // Cast to the DoStuff interface
-            AbstractLogMessageHandler stuffToDo = (AbstractLogMessageHandler) obj;
+//          if (obj instanceof AbstractLogMessageHandler) {
+//            // Cast to the DoStuff interface
+//            AbstractLogMessageHandler stuffToDo = (AbstractLogMessageHandler) obj;
             // Run it baby
-            stuffToDo.getSchema();
-          }
+//            stuffToDo.getSchema();
+//          }
           /*************************************************************************************************
            * Load and execute
            **/
