@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import hulva.luva.xx.demo.dynamiccode.compiler.ThirdPartyJarManager;
+import hulva.luva.xx.demo.dynamiccode.compiler.PluginJarManager;
 
 /**
  * @author Hulva Luva.H
@@ -16,14 +16,14 @@ import hulva.luva.xx.demo.dynamiccode.compiler.ThirdPartyJarManager;
  * @description
  *
  */
-@RequestMapping("/third-party-jar")
+@RequestMapping("/plugin-jar")
 @RestController
-public class ThirdPartyJarController extends BaseController {
+public class PluginJarController extends BaseController {
   @Autowired
-  ThirdPartyJarManager thirdPartyJarManager;
+  PluginJarManager pluginJarManager;
 
   @GetMapping("/query")
-  public Map<String, Object> query(@RequestParam String query) {
-    return SUCCESS(thirdPartyJarManager.query(query));
+  public Map<String, Object> list(@RequestParam String pluginName) {
+    return SUCCESS(pluginJarManager.list(pluginName));
   }
 }
